@@ -1,2 +1,2 @@
 [config]
-command = npm install && cp -rs app/* wwwroot/
+command = npm install && cp -rs app/* ../wwwroot/
