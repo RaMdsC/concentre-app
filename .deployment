@@ -1,2 +1,2 @@
 [config]
-command = cd /d/home/site/repository/backend && npm install
+command = bash deploy.sh
