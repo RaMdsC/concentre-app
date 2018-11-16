@@ -1,0 +1,11 @@
+{
+  "name": "concentre-app",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Concentre - Find your ideal study place",
+  "repository": "https://github.com/RaMdsC/concentre-app",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
