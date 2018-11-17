@@ -1,11 +1,20 @@
 {
-  "name": "concentre-app",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Concentre - Find your ideal study place",
-  "repository": "https://github.com/RaMdsC/concentre-app",
-  "license": "MIT",
+  "author": "No Company",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "mongoose": "^5.3.12",
     "express": "^4.16.4"
-  }
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  },
+  "description": "Concentre API - Tu lugar de estudio eficiente",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "concentre-api",
+  "scripts": {
+    "start": "node src/index.js",
+    "start-watch": "nodemon src/index.js"
+  },
+  "version": "0.0.1"
 }

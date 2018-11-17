@@ -1,2 +1,2 @@
 [config]
-command = npm install && cp -rs /d/home/site/repository/app/* /d/home/site/wwwroot/
+command = bash deploy.sh
