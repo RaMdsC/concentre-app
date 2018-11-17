@@ -12,9 +12,21 @@ const UserSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    interests: {
+        required: true,
+        type: Array
+    },
     name: {
         required: true,
         type: String
+    },
+    rating: {
+        default: 0,
+        type: Number
+    },
+    opinions: {
+        default: [],
+        type: Array
     },
     surname: {
         required: true,
