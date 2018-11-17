@@ -4,7 +4,7 @@ const env = require('../env');
 mongoose.connect(env.db);
 
 const PlaceSchema = new mongoose.Schema({
-    id: Number,
+    idPlace: Number,
     owner: {
         required: true,
         type: String

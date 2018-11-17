@@ -24,7 +24,7 @@ router.get('/places', (req, res) => {
 // Get specific place
 router.get('/place/:id', (req, res) => {
     PlaceModel.findOne({
-        id: id
+        idPlace: id
     }).then(doc => {
         res.json(doc);
     }).catch(err => {
