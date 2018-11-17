@@ -43,8 +43,11 @@ router.post('/place', (req, res) => {
     if(!req.body.capacity) {
         return res.status(400).send('Field "capacity" is required');
     }
-    if(!req.body.location) {
-        return res.status(400).send('Field "location" is required');
+    if(!req.body.latitude) {
+        return res.status(400).send('Field "latitude" is required');
+    }
+    if(!req.body.longitude) {
+        return res.status(400).send('Field "longitude" is required');
     }
     new PlaceModel(req.body).save()
         .then(doc => {
