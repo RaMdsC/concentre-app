@@ -18,7 +18,7 @@ router.get('/places', (req, res) => {
 // Get specific place
 router.get('/place/:idPlace', (req, res) => {
     PlaceModel.findOne({
-        idPlace: idPlace
+        idPlace: req.params.idPlace
     }).then(doc => {
         res.json(doc);
     }).catch(err => {
@@ -33,6 +33,15 @@ router.post('/place', (req, res) => {
     }
     if(!req.body.capacity) {
         return res.status(400).send('Field "capacity" is required');
+    }
+    if(!req.body.description) {
+        return res.status(400).send('Field "description" is required');
+    }
+    if(!req.body.distance) {
+        return res.status(400).send('Field "distance" is required');
+    }
+    if(!req.body.imagePath) {
+        return res.status(400).send('Field "imagePath" is required');
     }
     if(!req.body.owner) {
         return res.status(400).send('Field "owner" is required');

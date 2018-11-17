@@ -20,6 +20,15 @@ router.post('/user', (req, res) => {
     if(!req.body) {
         return res.status(400).send('Request body is missing');
     }
+    if(!req.body.imagePath) {
+        return res.status(400).send('Field "imagePath" is required');
+    }
+    if(!req.body.name) {
+        return res.status(400).send('Field "name" is required');
+    }
+    if(!req.body.surname) {
+        return res.status(400).send('Field "surname" is required');
+    }
     if(!req.body.userName) {
         return res.status(400).send('Field "userName" is required');
     }
