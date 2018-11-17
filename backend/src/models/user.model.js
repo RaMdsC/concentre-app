@@ -4,6 +4,10 @@ const env = require('../env');
 mongoose.connect(env.db);
 
 const UserSchema = new mongoose.Schema({
+    address: {
+        required: true,
+        type: String
+    },
     energyPoints: {
         default: 0,
         type: Number
@@ -36,6 +40,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
         type: String,
         unique: true
+    },
+    zipCode: {
+        required: true,
+        type: String
     }
 });
 
