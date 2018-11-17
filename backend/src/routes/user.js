@@ -7,7 +7,7 @@ const router = express.Router();
 // Get specific user
 router.get('/user/:name', (req, res) => {
     UserModel.findOne({
-        userName: name
+        userName: req.params.name
     }).then(doc => {
         res.json(doc);
     }).catch(err => {
