@@ -12,7 +12,7 @@ router.get('/places', (req, res) => {
     if(!req.query.longitude) {
         return res.status(400).send('Missing URL parameter: "longitude"');
     }*/
-    PlaceModel.find()
+    PlaceModel.find({})
         .then(doc => {
             res.json(doc);
         })
