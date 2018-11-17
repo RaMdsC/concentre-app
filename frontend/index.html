@@ -4,14 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="app-content/bootstrap.min.css">
-    <link rel="stylesheet" href="app-content/app.css"/>
     <link rel="stylesheet" href="app-content/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="app-content/chat.css">
     <title>ConCentre</title>
   </head>
   <body>
-    <div class="app-title">
-      <h1>ConCentre</h1>
-    </div>
     
     <ui-view></ui-view> 
 
@@ -32,10 +30,12 @@
  <script src="js/ngStorage.js"></script>
 
  <!--Application scripts-->
+ <script src="app-content/messages.js"></script>
  <script src="app.js"></script>
  <script src="controllers/login.controller.js"></script>
  <script src="controllers/home.controller.js"></script>
  <script src="controllers/detail.controller.js"></script>
+ <script src="controllers/chat.controller.js"></script>
  <script src="services/authentication.service.js"></script>
 
 

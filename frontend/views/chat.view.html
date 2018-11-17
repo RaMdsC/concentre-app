@@ -1,0 +1,10 @@
+<div class="chat-main">
+    <div class="toolbar"></div>
+    <div class="message-container">
+        <div class="message" ng-class="setStyle()" ng-repeat="message in messages">
+            <img class="avatar" ng-src="{{message.avatar}}">
+            <p class="name">{{message.user}}</p>
+            <p class="content">{{message.message}}</p>
+        </div>
+    </div>
+</div>>

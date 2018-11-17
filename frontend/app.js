@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular
-        .module('concentre', ['ui.router', 'ngMessages', 'ngStorage', 'ui.bootstrap', 'ngAnimate', 'hmTouchEvents'])
+        .module('concentre', ['ui.router', 'ngMessages', 'ngStorage', 'ui.bootstrap', 'ngAnimate', 'hmTouchEvents', 'messages'])
         .config(config)
         .run(run)
         .controller('appController', controller);
@@ -37,6 +37,11 @@
                 templateUrl: 'views/home.view.html',
                 controller: 'home.controller',
                 controllerAs: 'vm',                
+            })
+            .state('chat', {
+                url: '/chat',
+                templateUrl: 'views/chat.view.html',
+                controller: 'chat.controller'
             })
             .state('map', {
                 url: '/map',
