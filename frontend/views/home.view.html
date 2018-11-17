@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="close-sites-list">
+        <div class="home-user-info text-center">
+            <div class="user-avatar">
+                    <img ng-src="{{user.imagePath}}">
+                <div class="user-name">{{user.userName}} </div>
+                <div class="">Tienes {{user.energyPoints}} Energy Points</div>
+            </div>
+        </div>
+
+        <!--Places-->
+        <div class="places-wrapper row" ng-repeat="place in places">
+            <div  hm-swiperight="enlargePlaceImg()" hm-swipeleft="minimizePlaceImg()" class="place-img" ng-class="placeImgClass">
+                <img  ng-src="{{place.imagePath}}"/>
+            </div>            
+            <div class="col-7">
+                   <div class='row'> <span class="place-distance col-12">Capacidad: {{place.capacity}} Distancia:{{place.distance}}km</span></div>
+                   <div class="row"><span class="place-description col-12"> Descripcion: {{place.description}}</span></div>
+                   <div class='row'> <span class="place-rating col-6"> Valoracion: {{place.rating}}</span> <span class="place-price col-6"> Precio: {{place.price}}/hora </span></div>
+                   <div class='row'> </div>
+            </div>
+            
+            <!--<div class="place-description"> Habitacion con sitio para dos personas extra {{place.description}} </div>
+            <div class="place-rating"> 3.5/5 {{place.rating}}    </div>
+            <div class="place-distance"> A 2 km de ti {{place.distance}}    </div>
+            <div class="place-price">  0.5$ la hora {{place.price}}   </div>
+            <div class="banner"> </div>-->
+        </div>
+
+    </div>
+</div>

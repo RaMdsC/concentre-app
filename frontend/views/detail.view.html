@@ -1,0 +1,31 @@
+<div class="container-fluid">
+        <div class="close-sites-list">
+            <!--Places' details-->
+            <div style="height: 305px; margin-bottom: 75px;">
+                    <div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="active">                
+                        <div uib-slide ng-repeat="slide in user.imagePath track by slide.id" index="slide.id">                    
+                            <img ng-src="{{slide.image}}" data-echo="{{slide.image}}" style="margin:auto; height: 250px;">                    
+                            <div class="carousel-caption">
+                                
+                            </div>                    
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row">                
+                <div class="col-7">
+                       <div class='row'> <span class="place-distance col-12">Capacidad: {{place.capacity}} Distancia:{{place.distance}}km</span></div>
+                       <div class="row"><span class="place-description col-12"> Descripcion: {{place.description}}</span></div>
+                       <div class='row'> <span class="place-rating col-6"> Valoracion: {{place.rating}}</span> <span class="place-price col-6"> Precio: {{place.price}}/hora </span></div>
+                       <div class='row'> </div>
+                </div>
+                
+                <!--<div class="place-description"> Habitacion con sitio para dos personas extra {{place.description}} </div>
+                <div class="place-rating"> 3.5/5 {{place.rating}}    </div>
+                <div class="place-distance"> A 2 km de ti {{place.distance}}    </div>
+                <div class="place-price">  0.5$ la hora {{place.price}}   </div>
+                <div class="banner"> </div>-->
+            </div>
+    
+        </div>
+    </div>

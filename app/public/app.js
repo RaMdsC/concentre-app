@@ -1,7 +1,8 @@
 (function () {
     'use strict';
+
     angular
-        .module('concentre', ['ui.router', 'ngMessages', 'ngStorage', 'ui.bootstrap', 'ngAnimate', 'hmTouchEvents'])
+        .module('concentre', ['ui.router', 'ngMessages', 'ngStorage', 'angular-jwt', 'ui.bootstrap', 'ngAnimate', 'agrovision.config'])
         .config(config)
         .run(run)
         .controller('appController', controller);
@@ -14,7 +15,22 @@
         };
     }
 
-    function config($stateProvider, $urlRouterProvider) {        
+    function config($stateProvider, $urlRouterProvider, $httpProvider, jwtOptionsProvider, $locationProvider) {
+        jwtOptionsProvider.config({
+            tokenGetter: ['options', function (options) {
+                // Skip authentication for any requests ending in .html
+                if (options.url.substr(options.url.length - 5) == '.html') {
+                    return null;
+                }
+
+                return localStorage.getItem('id_token');
+            }],
+            whiteListedDomains: ['agrovision.es', 'localhost']
+        });
+
+        $httpProvider.interceptors.push('jwtInterceptor');
+
+
         // default route
         $urlRouterProvider.otherwise("/");
 
@@ -44,10 +60,10 @@
                 controller: 'map.Controller',
                 controllerAs: 'vm'
             })
-            .state('detail', {
-                url: '/detail',
-                templateUrl: 'views/detail.view.html',
-                controller: 'detail.controller',
+            .state('details', {
+                url: '/details',
+                templateUrl: 'views/details.view.html',
+                controller: 'details.controller',
                 controllerAs: 'vm'
             })
             .state('book-in', {
@@ -68,9 +84,12 @@
                 controller: 'profile.controller',
                 controllerAs: 'vm'
             });
+
+
     }
 
     function run($rootScope, $http, $location, $localStorage) {
+
         // keep user logged in after page refresh
         if ($localStorage.currentUser) {
             $http.defaults.headers.common.Authorization = $localStorage.currentUser.token;
@@ -78,17 +97,14 @@
         }
 
         // redirect to login page if not logged in and trying to access a restricted page
-        //TODO
-        /*$rootScope.$on('$locationChangeStart', function (event, next, current) {
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
             var publicPages = ['/login'];
             var restrictedPage = publicPages.indexOf($location.path()) === -1;
             if (restrictedPage && !$localStorage.currentUser) {
+
                 $location.path('/login');
             }
-        });*/
+        });
     }
 
 })();
-
-
-
