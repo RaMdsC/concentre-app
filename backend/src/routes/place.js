@@ -5,21 +5,21 @@ const PlaceModel = require('../models/place.model');
 const router = express.Router();
 
 // Get all places within 10 Km radius
-router.get('/place', (req, res) => {
-    if(!req.query.latitude) {
+router.get('/places', (req, res) => {
+    /*if(!req.query.latitude) {
         return res.status(400).send('Missing URL parameter: "latitude"');
     }
     if(!req.query.longitude) {
         return res.status(400).send('Missing URL parameter: "longitude"');
-    }
-    // Calculate radius of 10 Km
-    /*const d = 10.0;
-    const R = 6371e3;
-    const c = d / R;
-    const a = 2
+    }*/
     PlaceModel.find()
-        .where('location')*/
-})
+        .then(doc => {
+            res.json(doc);
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
 
 // Get specific place
 router.get('/place/:id', (req, res) => {
