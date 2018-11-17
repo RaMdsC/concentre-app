@@ -26,7 +26,7 @@ const PlaceSchema = new mongoose.Schema({
     },
     imagePath: {
         required: true,
-        type: [String]
+        type: Array
     },
     owner: {
         required: true,
