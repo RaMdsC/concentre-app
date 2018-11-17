@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const express = require('express');
 const path = require('path');
 
@@ -10,6 +11,8 @@ const port = process.env.port || 3000;
 
 // For parsing JSON
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // Timestamp for every request
 app.use((req, res, next) => {

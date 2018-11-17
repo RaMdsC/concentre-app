@@ -5,6 +5,9 @@
     "mongoose": "^5.3.12",
     "express": "^4.16.4"
   },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  },
   "description": "Concentre API - Tu lugar de estudio eficiente",
   "license": "MIT",
   "main": "index.js",
